@@ -28,7 +28,7 @@ class Student
     # return a new instance of the Student class
     student = nil
     sql = <<-SQL
-        SELECT name FROM students WHERE name = ? LIMIT 1
+        SELECT * FROM students WHERE name = ? LIMIT 1
       SQL
     DB[:conn].execute(sql, name).map do |row|
       binding.pry
